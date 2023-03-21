@@ -1,0 +1,8 @@
+<svg width="0" height="0" class="hidden">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" id="icon-arrow-down">
+    <path stroke="currentColor" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" id="icon-arrow-up">
+    <path stroke="currentColor" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"></path>
+  </symbol>
+</svg>

@@ -1,0 +1,560 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===================== HEADER ====================== */
+
+.header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    background: black;
+    /* padding: 10px 0; */
+    color: white;
+    z-index: 1;
+}
+
+.section1-home a{
+    display: block;
+    padding: 15px 20px;
+}
+
+.section1-home a:hover{
+    background: gray;
+    color: black;
+}
+
+.section2-link{
+    /* display: none; */
+    position: fixed;
+    top: 48px;
+    background: black;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transform: translate(-100%);
+}
+
+@keyframes zoom {
+    /* from {transform: translateX(-120%);}
+    to {transform: translateX(0);} */
+
+
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0);}
+  }
+
+.section2-link.show-modal{
+    animation-name: zoom; 
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.nav-link{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link a{
+    display: block;
+    padding: 15px 0 15px 20px;
+}
+
+.nav-link .div:not(:nth-child(4)) a:hover{
+    color: black;
+}
+
+.nav-link .div:not(:nth-child(4)):hover{
+    background: gray;
+}
+
+.more{
+    position: relative;
+}
+
+.more div{
+    padding: 15px 0 15px 20px;
+    z-index: 1;
+}
+
+.more div:hover{
+    background: gray;
+    color: black;
+    cursor: pointer;
+}
+
+.link-more{
+    display: none;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    background: black;
+    z-index: 1;
+    padding: 0 25px;
+    width: 200px;
+}
+
+.link-more a:hover{
+    background: gray;
+}
+.link-more.show{
+    display: block;
+}
+
+.section3{
+    display: flex;
+    gap: 20px;
+    /* padding: 15px 20px 15px 0; */
+    padding-right: 20px;
+}
+
+
+.open-menu{
+    align-self: center;
+}
+
+.icon-search{
+    width: 18px;
+    height: 18px;
+}
+
+.icon-search:hover{
+    cursor: pointer;
+    color: gray;
+    transition: .6s;
+}
+
+.icon-open-menu{
+    width: 17px;
+    height: 17px;
+}
+
+.icon-open-menu:hover{
+    color: gray;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.icon-arrow-down{
+    width: 18px;
+    height: 8px;
+    transform: translateY(-30%);
+}
+
+
+
+/* ===================== MAIN ====================== */
+
+/* ===================== ASIDE ====================== */
+
+
+.main{
+    margin-top: 48px;
+
+}
+
+.slide{
+    position: relative;
+    z-index: 0;
+}
+
+.slide div{
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    bottom: 0%;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slide h3{
+    margin-bottom: 0px;
+    font-size: .8em;
+}
+
+.slide p{
+    margin-top: 3px;
+    font-size: .7em;
+}
+
+
+/* ===================== SECTION THE BAND ====================== */
+
+.container-section-theBand{
+    padding: 50px 20px 0px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.h2{
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 1.6em;
+    font-weight: 100;
+}
+
+.i{
+    text-align: center;
+    font-style: italic;
+    color: gray;
+}
+
+.p{
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+/* ===================== SECTION PHOTOS ====================== */
+
+.section-photos{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px 100px; 
+
+}
+.section-photos div{
+    text-align: center;
+}
+
+.section-photos img{
+    border-radius: 6px;
+    width: 100%;
+}
+
+
+/* ===================== SECTION TOUR DATES ====================== */
+
+.section-tour-dates{
+    background: black;
+    color: white;
+}
+
+.container-tour-dates{
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 20px 80px;
+}
+
+.div-mois{
+    background: white;
+    color: gray;
+    /* padding-left: 20px; */
+    margin-bottom: 30px;
+}
+
+.p-mois{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.322);
+    padding: 10px 0 10px 20px;
+    margin: 0;
+}
+
+.sold-out{
+    display: inline-block;
+    background: rgba(255, 0, 0, 0.818);
+    padding: 3px 10px;
+    margin-left: 20px;
+    color: white;
+}
+
+.span-3{
+    display: inline-block;
+    background: black;
+    padding: 3px 8px;
+    border-radius: 50%;
+    color: white;
+    margin-right: 20px;
+}
+
+.p-mois.sp-3{
+    display: flex;
+    justify-content: space-between;
+}
+
+.november{
+    align-self: center;
+}
+
+.div-container-photos{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-container-photos div{
+    background: white;
+    color: black;
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+.div-container-photos img:hover{
+    filter: brightness(50%);
+}
+
+.div-container-photos img{
+    margin-bottom: 0;
+    /* z-index: 1; */
+} 
+
+.p-date{
+    color: gray;
+}
+
+.btn-date{
+    border: none;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+}
+
+.btn-date:hover{
+    cursor: pointer;
+    background: gray;
+    color: black;
+}
+
+.container-photos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ===================== SECTION CONTACT ====================== */
+
+.container-contact{
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px 90px;
+}
+
+.icon-contact{
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+}
+
+.icon-message{
+    width: 20px;
+    height: 20px;
+    transform: translateY(20%);
+    margin-right: 9px;
+}
+
+.container-infos{
+    margin-top: 60px;
+}
+
+.p-infos p:not(:last-child){
+    margin: 8px 0;
+}
+
+.p-solo{
+    transform: translateY(-15%);
+    margin: 0px 0 10px;
+}
+
+.input{
+    width: 100%;
+    margin: 5px 0;
+    padding: 12px 0 12px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.318);
+}
+
+.input-btn{
+    float: right;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background: black;
+    color: white;
+}
+
+.input-btn:hover{
+    background: gray;
+    color: black;
+    cursor: pointer;
+}
+
+.map{
+    filter: grayscale(50%);
+    margin-bottom: 30px;
+}
+
+
+/* ===================== FOOTER ====================== */
+
+.icon-reseau{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+
+.icon-reseauSocial{
+    width: 30px;
+    height: 30px;
+    /* transform: translateY(15%); */
+}
+
+.footer{
+    text-align: center;
+    padding: 30px 0 80px;
+}
+
+.footer svg:hover{
+    color: gray;
+}
+
+
+/* =================== APPARITION AU DEFILLEMENT ==================== */
+
+.reveal-loaded .reveal[class*="reveal-"]{
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+    transition: 0s !important;
+}
+
+.reveal-loaded [class*="reveal-"]{
+    transition: 2s cubic-bezier(.5, 0, 0, 1);
+}
+
+.reveal-loaded .reveal-2{
+    transition-delay: .1s;
+}
+
+.reveal-loaded .reveal-3{
+    transition-delay: .3s;
+}
+
+.reveal-loaded .reveal-4{
+    transition-delay: .5s;
+}
+
+.reveal-loaded .reveal-5{
+    transition-delay: .7s;
+}
+
+.reveal-loaded .reveal-6{
+    transition-delay: .9s;
+}
+
+
+
+
+
+
+/* =================== RESPONSIVE ==================== */
+
+
+@media screen and (min-width: 650px) {
+
+    /* ===================== HEADER ====================== */
+
+    .header{
+        justify-content: flex-start;
+    }
+
+    .section2-link{
+        /* display: block; */
+        position: static;
+        margin-right: auto;
+        transform: translate(0);
+    }
+
+    .nav-link{
+        flex-direction: row;
+    }
+
+    .nav-link a{
+        padding: 15px 20px;
+    }
+
+    .open-menu{
+        display: none;
+    }
+
+    .more div{
+        padding: 15px 20px;
+    }
+
+    .link-more{
+        padding: 0;
+    }
+
+
+    /* ===================== MAIN ====================== */
+
+    /* ===================== ASIDE ====================== */
+
+    .slide div{
+        bottom: 7%;
+    }
+
+    .slide h3{
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+    
+    .slide p{
+        margin-top: 3px;
+        font-size: 1em;
+    }
+
+    /* ===================== SECTION THE BAND ====================== */
+
+    /* ===================== SECTION PHOTOS ====================== */
+
+    .section-photos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 100px;
+        padding: 10px 40px;
+    }
+
+    
+    /* ===================== SECTION TOUR DATES ====================== */
+
+    .container-photos{
+        flex-direction: row;
+    }
+
+    /* ===================== SECTION CONTACT ====================== */
+
+    .container-infos{
+        display: flex;
+    }
+
+    .div-form{
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-contact{
+        flex: 50%;
+    }
+
+
+    .p-infos{
+        flex: 50%;
+    }
+
+}
+
