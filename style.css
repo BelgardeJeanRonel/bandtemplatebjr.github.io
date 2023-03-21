@@ -50,7 +50,7 @@ a{
     left: 0;
     right: 0;
     z-index: 1;
-    transform: translate(-100%);
+    transform: translate(-150%);
 }
 
 @keyframes zoom {
@@ -58,7 +58,7 @@ a{
     to {transform: translateX(0);} */
 
 
-    from {transform: translateX(-100%);}
+    from {transform: translateX(-150%);}
     to {transform: translateX(0);}
   }
 
@@ -104,7 +104,7 @@ a{
 .link-more{
     display: none;
     position: absolute;
-    top: 33px;
+    top: 40px;
     left: 0;
     background: black;
     z-index: 1;
@@ -136,21 +136,10 @@ a{
     height: 18px;
 }
 
-.icon-search:hover{
-    cursor: pointer;
-    color: gray;
-    transition: .6s;
-}
-
 .icon-open-menu{
     width: 17px;
     height: 17px;
-}
-
-.icon-open-menu:hover{
-    color: gray;
     cursor: pointer;
-    transition: .6s;
 }
 
 .icon-arrow-down{
