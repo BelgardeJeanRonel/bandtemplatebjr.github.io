@@ -22,12 +22,12 @@ iconOpenMenu.addEventListener("click", function(e) {
     }else{
           iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
 
-        //   menuModal.animate([
-        //     { transform: 'translate(0)'},
-        //     { transform: 'translate(-150%)'},
-        //   ], {
-        //     duration: 1000,
-        //   })
+          menuModal.animate([
+            { transform: 'translate(0)'},
+            { transform: 'translate(-150%)'},
+          ], {
+            duration: 1000,
+          })
 
           linkMore.classList.remove("show");
           iconArrow.setAttribute("xlink:href", "sprite.svg#icon-arrow-down");
