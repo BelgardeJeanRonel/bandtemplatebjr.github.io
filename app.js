@@ -1,9 +1,10 @@
 import { showSlides } from "./slideShow.js";
 
 
-
 const iconOpenMenu = document.querySelector(".icon-open-menu");
 const menuModal = document.querySelector(".section2-link");
+const iconMenu = document.querySelector(".icon-menu");
+
 iconOpenMenu.addEventListener("click", function(e) {
 
     console.log(e);
@@ -15,12 +16,23 @@ iconOpenMenu.addEventListener("click", function(e) {
           ], {
             duration: 500
     })
-    const iconMenu = document.querySelector(".icon-menu");
+
+    let scrollY = window.scrollY;
 
     if (menuModal.className === "section2-link show-modal"){
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#menu-close");
+
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
+        scrollY = document.body.style.top;
+
     }else{
           iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
+          document.body.style.position = "static";
+          scrollY = document.body.style.top;
+          window.scrollTo(0, parseInt(scrollY ?? '0') * -1);
+
+          
 
           menuModal.animate([
             { transform: 'translate(0)'},
@@ -36,6 +48,19 @@ iconOpenMenu.addEventListener("click", function(e) {
 
 })
 
+const navLink = document.querySelectorAll(".nav-link a");
+
+navLink.forEach(a => {
+    a.addEventListener("click", function(){
+        document.body.style.position = "static";
+        menuModal.classList.remove("show-modal");
+        iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
+        
+    })
+})
+
+
+
 const linkMore = document.querySelector(".link-more");
 const iconArrow = document.querySelector(".iconArrow");
 
@@ -47,7 +72,6 @@ more.addEventListener("click", function(e) {
 
     linkMore.classList.toggle("show");
 
-    // const iconArrow = document.querySelector(".iconArrow");
 
     if (linkMore.className === "link-more show"){
         iconArrow.setAttribute("xlink:href", "sprite.svg#icon-arrow-up");
@@ -66,6 +90,10 @@ main.addEventListener("click", function() {
   
   linkMore.classList.remove("show");
   menuModal.style.removeProperty("height");
+  menuModal.classList.remove("show-modal");
+  iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
+
+
  
 })
 
@@ -84,9 +112,6 @@ const handleIntersect = function (entries, observer) {
         if (entry.intersectionRatio > ratio){
             entry.target.classList.remove("reveal")
             observer.unobserve(entry.target)
-            console.log("visible");
-        }else{
-            console.log("invisible");
         }
     })
 }
