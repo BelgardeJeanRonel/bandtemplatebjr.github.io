@@ -5,12 +5,12 @@ const iconOpenMenu = document.querySelector(".icon-open-menu");
 const menuModal = document.querySelector(".section2-link");
 const iconMenu = document.querySelector(".icon-menu");
 
-let scrollY;
-let i = 0
+// let scrollY;
+// let i = 0
 
 iconOpenMenu.addEventListener("click", function(e) {
 
-    console.log(e);
+    // console.log(e);
 
     menuModal.classList.toggle("show-modal");
     e.currentTarget.animate([
@@ -20,15 +20,15 @@ iconOpenMenu.addEventListener("click", function(e) {
             duration: 500
     })
 
-    scrollY = window.scrollY;
+    // scrollY = window.scrollY;
 
     if (menuModal.className === "section2-link show-modal"){
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#menu-close");
 
-        document.body.style.position = "fixed";
-        document.body.style.top = `-${scrollY}px`;
-        scrollY = document.body.style.top;
-        i++;
+        // document.body.style.position = "fixed";
+        // document.body.style.top = `-${scrollY}px`;
+        // scrollY = document.body.style.top;
+        // i++;
 
     }else{
           iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
@@ -56,10 +56,10 @@ const navLink = document.querySelectorAll(".nav-link a");
 
 navLink.forEach(a => {
     a.addEventListener("click", function(){
-        document.body.style.position = "static";
+        // document.body.style.position = "static";
         menuModal.classList.remove("show-modal");
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
-        i = 0;
+        // i = 0;
         
     })
 })
@@ -73,7 +73,7 @@ const iconArrow = document.querySelector(".iconArrow");
 const more = document.querySelector(".more");
 more.addEventListener("click", function(e) {
 
-    console.log(e.target, e.currentTarget);
+    // console.log(e.target, e.currentTarget);
 
     linkMore.classList.toggle("show");
 
@@ -99,15 +99,15 @@ main.addEventListener("click", function() {
   menuModal.classList.remove("show-modal");
   iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
 
-  console.log(scrollY);
+//   console.log(scrollY);
 
-  if (i) {
-    document.body.style.position = "static";
-    scrollY = document.body.style.top;
-    window.scrollTo(0, parseInt(scrollY ?? '0') * -1);
-  }
+//   if (i) {
+//     document.body.style.position = "static";
+//     scrollY = document.body.style.top;
+//     window.scrollTo(0, parseInt(scrollY ?? '0') * -1);
+//   }
 
-  i = 0;
+//   i = 0;
 
  
 })
