@@ -5,6 +5,9 @@ const iconOpenMenu = document.querySelector(".icon-open-menu");
 const menuModal = document.querySelector(".section2-link");
 const iconMenu = document.querySelector(".icon-menu");
 
+let scrollY;
+let i = 0
+
 iconOpenMenu.addEventListener("click", function(e) {
 
     console.log(e);
@@ -17,7 +20,7 @@ iconOpenMenu.addEventListener("click", function(e) {
             duration: 500
     })
 
-    let scrollY = window.scrollY;
+    scrollY = window.scrollY;
 
     if (menuModal.className === "section2-link show-modal"){
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#menu-close");
@@ -25,6 +28,7 @@ iconOpenMenu.addEventListener("click", function(e) {
         document.body.style.position = "fixed";
         document.body.style.top = `-${scrollY}px`;
         scrollY = document.body.style.top;
+        i++;
 
     }else{
           iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
@@ -55,6 +59,7 @@ navLink.forEach(a => {
         document.body.style.position = "static";
         menuModal.classList.remove("show-modal");
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
+        i = 0;
         
     })
 })
@@ -89,10 +94,20 @@ const main = document.querySelector(".main");
 main.addEventListener("click", function() {
   
   linkMore.classList.remove("show");
+  iconArrow.setAttribute("xlink:href", "sprite.svg#icon-arrow-down");
   menuModal.style.removeProperty("height");
   menuModal.classList.remove("show-modal");
   iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
 
+  console.log(scrollY);
+
+  if (i) {
+    document.body.style.position = "static";
+    scrollY = document.body.style.top;
+    window.scrollTo(0, parseInt(scrollY ?? '0') * -1);
+  }
+
+  i = 0;
 
  
 })
