@@ -64,7 +64,7 @@ a{
 
 .section2-link.show-modal{
     animation-name: zoom; 
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
 }
 
@@ -122,25 +122,27 @@ a{
 .section3{
     display: flex;
     gap: 20px;
-    /* padding: 15px 20px 15px 0; */
     padding-right: 20px;
 }
 
 
 .open-menu{
     align-self: center;
+    cursor: pointer;
+    padding: 4px 5px 0;
 }
 
-.icon-search{
-    width: 18px;
-    height: 18px;
+.open-menu:hover{
+    background: gray;
+    border-radius: 25%;
 }
 
 .icon-open-menu{
     width: 17px;
     height: 17px;
-    cursor: pointer;
 }
+
+
 
 .icon-arrow-down{
     width: 18px;

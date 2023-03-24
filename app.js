@@ -1,7 +1,7 @@
 import { showSlides } from "./slideShow.js";
 
 
-const iconOpenMenu = document.querySelector(".icon-open-menu");
+const iconOpenMenu = document.querySelector(".open-menu");
 const menuModal = document.querySelector(".section2-link");
 const iconMenu = document.querySelector(".icon-menu");
 
@@ -32,9 +32,9 @@ iconOpenMenu.addEventListener("click", function(e) {
 
     }else{
           iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
-          document.body.style.position = "static";
-          scrollY = document.body.style.top;
-          window.scrollTo(0, parseInt(scrollY ?? '0') * -1);
+        //   document.body.style.position = "static";
+        //   scrollY = document.body.style.top;
+        //   window.scrollTo(0, parseInt(scrollY ?? '0') * -1);
 
           
 
@@ -42,7 +42,7 @@ iconOpenMenu.addEventListener("click", function(e) {
             { transform: 'translate(0)'},
             { transform: 'translate(-150%)'},
           ], {
-            duration: 1000,
+            duration: 500,
           })
 
           linkMore.classList.remove("show");
@@ -98,6 +98,13 @@ main.addEventListener("click", function() {
   menuModal.style.removeProperty("height");
   menuModal.classList.remove("show-modal");
   iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
+
+  menuModal.animate([
+    { transform: 'translate(0)'},
+    { transform: 'translate(-150%)'},
+  ], {
+    duration: 500,
+  })
 
 //   console.log(scrollY);
 
