@@ -6,7 +6,7 @@ const menuModal = document.querySelector(".section2-link");
 const iconMenu = document.querySelector(".icon-menu");
 
 // let scrollY;
-// let i = 0
+let i = 0
 
 iconOpenMenu.addEventListener("click", function(e) {
 
@@ -28,7 +28,7 @@ iconOpenMenu.addEventListener("click", function(e) {
         // document.body.style.position = "fixed";
         // document.body.style.top = `-${scrollY}px`;
         // scrollY = document.body.style.top;
-        // i++;
+        i++;
 
     }else{
           iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
@@ -48,6 +48,8 @@ iconOpenMenu.addEventListener("click", function(e) {
           linkMore.classList.remove("show");
           iconArrow.setAttribute("xlink:href", "sprite.svg#icon-arrow-down");
           menuModal.style.removeProperty("height");
+
+          i = 0;
     }
 
 })
@@ -59,7 +61,7 @@ navLink.forEach(a => {
         // document.body.style.position = "static";
         menuModal.classList.remove("show-modal");
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
-        // i = 0;
+        i = 0;
         
     })
 })
@@ -99,12 +101,16 @@ main.addEventListener("click", function() {
   menuModal.classList.remove("show-modal");
   iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
 
-  menuModal.animate([
-    { transform: 'translate(0)'},
-    { transform: 'translate(-150%)'},
-  ], {
-    duration: 500,
-  })
+  if (i) {
+    menuModal.animate([
+        { transform: 'translate(0)'},
+        { transform: 'translate(-150%)'},
+    ], {
+        duration: 500,
+    })
+
+    i = 0;
+  }
 
 //   console.log(scrollY);
 
