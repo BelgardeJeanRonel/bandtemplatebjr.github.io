@@ -4,6 +4,8 @@ import { showSlides } from "./slideShow.js";
 const iconOpenMenu = document.querySelector(".open-menu");
 const menuModal = document.querySelector(".section2-link");
 const iconMenu = document.querySelector(".icon-menu");
+const linkMore = document.querySelector(".link-more");
+const iconArrow = document.querySelector(".iconArrow");
 
 // let scrollY;
 let i = 0
@@ -62,21 +64,21 @@ navLink.forEach(a => {
         menuModal.classList.remove("show-modal");
         iconMenu.setAttribute("xlink:href", "img/spriteMenu.svg#open-menu");
         i = 0;
-        
+
+        linkMore.classList.remove("show");
+        iconArrow.setAttribute("xlink:href", "sprite.svg#icon-arrow-down");
+        menuModal.style.removeProperty("height");
+    
     })
 })
 
 
 
-const linkMore = document.querySelector(".link-more");
-const iconArrow = document.querySelector(".iconArrow");
 
+const more2 = document.querySelector(".more2");
+more2.addEventListener("click", function(e) {
 
-const more = document.querySelector(".more");
-more.addEventListener("click", function(e) {
-
-    // console.log(e.target, e.currentTarget);
-
+    
     linkMore.classList.toggle("show");
 
 
