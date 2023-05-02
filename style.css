@@ -521,6 +521,18 @@ a{
             transition-delay: .9s;
 }
 
+.reveal-loaded .reveal-7{
+    -webkit-transition-delay: 1s;
+         -o-transition-delay: 1s;
+            transition-delay: 1s;
+}
+
+.reveal-loaded .reveal-8{
+    -webkit-transition-delay: 1.9s;
+         -o-transition-delay: 1.9s;
+            transition-delay: 1.9s;
+}
+
 
 
 
